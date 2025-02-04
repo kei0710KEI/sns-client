@@ -16,7 +16,7 @@ const TimeLine = () => {
       });
       setLatestPosts((prevPosts) => [NewPost.data, ...prevPosts]);
       setPostText("");
-    } catch (err) {
+    } catch (_err) {
       alert("ログインしてください。");
     }
   };

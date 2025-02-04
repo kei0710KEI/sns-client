@@ -27,7 +27,7 @@ const Login = () => {
       login(token);
 
       router.push("/");
-    } catch (err) {
+    } catch (_err) {
       alert("入力内容が正しくありません");
     }
   };
