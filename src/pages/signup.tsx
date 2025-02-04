@@ -22,7 +22,7 @@ const Signup = () => {
       });
       // 登録が成功したら、ログインページにリダイレクトする
       router.push("/login");
-    } catch (_err) {
+    } catch (err) {
       alert("入力内容が正しくありません");
     }
   };

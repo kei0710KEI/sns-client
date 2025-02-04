@@ -17,7 +17,6 @@ const TimeLine = () => {
       setLatestPosts((prevPosts) => [NewPost.data, ...prevPosts]);
       setPostText("");
     } catch (err) {
-      console.error(err);
       alert("ログインしてください。");
     }
   };
@@ -27,8 +26,8 @@ const TimeLine = () => {
       try {
         const response = await apiClient.get("/posts/get_latest_post");
         setLatestPosts(response.data);
-      } catch (_err) {
-        console.log(_err);
+      } catch (err) {
+        console.log(err);
       }
     };
 
