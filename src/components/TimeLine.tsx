@@ -26,8 +26,8 @@ const TimeLine = () => {
       try {
         const response = await apiClient.get("/posts/get_latest_post");
         setLatestPosts(response.data);
-      } catch (err) {
-        console.log(err);
+      } catch (_err) {
+        console.log(_err);
       }
     };
 
