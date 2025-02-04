@@ -1,7 +1,7 @@
 //SSR 静的生成
 import apiClient from "@/lib/apiClient";
 import { PostType, Profile } from "@/src/types";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { GetServerSideProps } from "next";
 import Image from "next/image";
 import React from "react";
 
@@ -10,8 +10,8 @@ type Props = {
   posts: PostType[];
 };
 
-export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  const  userId = context.query.userId as string;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const  { userId } = context.query;
 
   try {
     const profileResponse = await apiClient.get(`/users/profile/${userId}`);
