@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  const { userId } = context.query;
+  const  userId = context.query.userId as string;
 
   try {
     const profileResponse = await apiClient.get(`/users/profile/${userId}`);
