@@ -1,7 +1,7 @@
 //SSR 静的生成
 import apiClient from "@/lib/apiClient";
 import { PostType, Profile } from "@/src/types";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import React from "react";
 
@@ -10,8 +10,7 @@ type Props = {
   posts: PostType[];
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const { userId } = context.query;
 
   try {
